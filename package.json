@@ -1,0 +1,19 @@
+{
+  "name": "mapas-populate-ext",
+  "packageManager": "yarn@4.9.1",
+  "scripts": {
+    "start": "parcel watch manifest.json --host localhost --config @parcel/config-webextension",
+    "build": "parcel build manifest.json --config @parcel/config-webextension"
+  },
+  "devDependencies": {
+    "@parcel/config-webextension": "^2.15.0",
+    "@parcel/core": "^2.15.0",
+    "@types/chrome": "^0.0.322",
+    "parcel": "^2.15.0"
+  },
+  "dependencies": {
+    "choices.js": "^11.1.0",
+    "tom-select": "^2.4.3",
+    "webextension-polyfill": "^0.12.0"
+  }
+}
