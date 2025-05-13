@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "choices.js": "^11.1.0",
-    "tom-select": "^2.4.3",
     "webextension-polyfill": "^0.12.0"
   }
 }

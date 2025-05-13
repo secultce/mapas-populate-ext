@@ -9,12 +9,26 @@
 </head>
 <body>
     <fieldset>
-        <input name="opportunity" />
-        <select multiple id="agents[]" name="agents"></select>
+        <legend>Inscrever agentes em uma oportunidade</legend>
+
+        <label for="opportunity">ID da oportunidade:</label>
+        <input id="opportunity" name="opportunity" placeholder="ID da oportunidade" type="number" />
+
+        <label for="agents-text">IDs dos agentes:</label>
+        <input id="agents-text" name="agents" placeholder="IDs dos agentes (114499,134544,...)" />
+
+        <select multiple id="agents" name="agents[]"></select>
         <button id="add-registration">Inscrever</button>
     </fieldset>
 
-    <input type="text" name="agents">
+    <table id="registrations">
+        <tr>
+            <th>Inscrição</th>
+            <th>Agente</th>
+        </tr>
+    </table>
+
+    <output style="color: red;"></output>
     <script src="popup.js" type="module"></script>
 </body>
 </html>

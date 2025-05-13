@@ -1,4 +1,29 @@
 body {
     width: 400px;
     min-height: 300px;
+    padding: 10px;
+}
+
+input#opportunity,
+input[name=agents] {
+    width: 100%;
+    margin-block: 10px;
+}
+
+button#add-registration {
+    width: 100%;
+    padding: 10px;
+    background: #085E55;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+table {
+    border-collapse: collapse;
+}
+table tr > * {
+    padding-inline: 4px;
+    border: 1px solid #000;
 }

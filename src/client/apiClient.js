@@ -4,6 +4,12 @@ import MapasSDK from "../MapasSDK";
 async function getSdkClient() {
   const instanceUrl = (await getCurrentTabUrl()).origin;
 
+  if ('https://mapacultural.secult.ce.gov.br' === instanceUrl) {
+    const msg = 'Instância sem permissão para usar extensão.';
+    alert(msg);
+    throw new Error(msg);
+  }
+
   return new MapasSDK(
     instanceUrl,
   );
@@ -24,18 +30,23 @@ export async function createRegistrations(opportunity, agents) {
   const fails = [];
   const createdRegistrations = [];
 
-  console.log(agents);
-
   for (const agent of agents) {
     try {
       const response = await sdkClient.apiPost( '/inscricoes', {
         opportunityId: opportunity,
         ownerId: agent,
         category: '',
+        status: 1,
       });
-      console.log(response);
 
-      createdRegistrations.push({agent});
+      if (!response.id) {
+        throw Error();
+      }
+
+      createdRegistrations.push(response);
+
+      sdkClient.apiPost( '/inscricoes/send/' + response.id)
+        .catch(_ => {});
     } catch (e) {
       fails.push(agent);
     }

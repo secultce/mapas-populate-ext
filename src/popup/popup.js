@@ -7,8 +7,35 @@ import {createRegistrations, fetchAgents} from "../client/apiClient";
 document.addEventListener('DOMContentLoaded', async () => {
   const url = await getCurrentTabUrl();
   if (url.pathname.includes('/oportunidade/')) {
-    document.querySelector('[name=opportunity]').value = url.pathname.split('oportunidade/')[1];
+    document.querySelector('[name=opportunity]').value = url.pathname
+      .split('oportunidade/')[1]
+      .replace('/', '');
   }
+
+  const AGENTS = [
+    124120, // draulio.brasil@secult.ce.gov.br
+    123167, // francisco.oliveira@secult.ce.gov.br
+    140414, // jaime.aguiar@secult.ce.gov.br
+    141768, // jefferson.dourado@secult.ce.gov.br
+    134378, // ronny.john@secult.ce.gov.br
+    113581, // yasmine.maciel@secult.ce.gov.br
+    136538, // ronnyjohnti@gmail.com
+    77431,  // yasminemaciel02@gmail.com
+    114697, // yasminemaciel7@gmail.com
+    140290, // your.email+fakedata14277@gmail.com
+    147159, // your.email+fakedata26967@gmail.com
+    133693, // your.email+fakedata28127@gmail.com
+    140291, // your.email+fakedata28214@gmail.com
+    124543, // your.email+fakedata29875@gmail.com
+    147545, // your.email+fakedata32740@gmail.com
+    140180, // your.email+fakedata42366@gmail.com
+    140590, // your.email+fakedata45744@gmail.com
+    147548, // your.email+fakedata52989@gmail.com
+    147547, // your.email+fakedata89246@gmail.com
+    124546, // your.email+fakedata91370@gmail.com
+  ];
+
+  document.querySelector('input[name="agents"]').value = AGENTS.join(',');
 });
 
 const SELECT_AGENTS = document.querySelector('select[name^=agents]');
@@ -73,6 +100,20 @@ BUTTON_ADD_REGISTRATION.addEventListener('click', async () => {
     agents = document.querySelector('input[name=agents]').value.split(',');
   }
 
-  const response = await createRegistrations(opportunityId, agents);
-  console.log(response);
+  const result = await createRegistrations(opportunityId, agents);
+  renderResult(result);
 });
+
+const renderResult = result => {
+  const REGISTRATIONS_TABLE = document.getElementById('registrations');
+
+  for (const registration of result.createdRegistrations) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><a href="${registration.singleUrl}" target="_blank">${registration.number} (id: ${registration.id})</a></td>`
+      + `<td><a href="${registration.owner.singleUrl}" target="_blank">${registration.owner.name}</a></td>`;
+
+    REGISTRATIONS_TABLE.children[0].appendChild(tr);
+  }
+
+  document.querySelector('output').innerText = result.fails.join(', ');
+}

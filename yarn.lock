@@ -161,22 +161,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@orchidjs/sifter@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@orchidjs/sifter@npm:1.1.0"
-  dependencies:
-    "@orchidjs/unicode-variants": "npm:^1.1.2"
-  checksum: 10c0/615f4c8f340c062d1a944ae88d7d745353e45d14d002c6966bc02ef44aca13c904942836f9ad89cbe2b5d8fa3b885c2b00b65be8d318cabc75f440949068ed6a
-  languageName: node
-  linkType: hard
-
-"@orchidjs/unicode-variants@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@orchidjs/unicode-variants@npm:1.1.2"
-  checksum: 10c0/7836e0766641d79a0337a2a8ca7f49051bb71e19e0e8fc64cdbafac4f2f718abd368b364ad79a9b13547a70e24cebb3cc4d71e75f22791ade8ba80654eb1323f
-  languageName: node
-  linkType: hard
-
 "@parcel/bundler-default@npm:2.15.0":
   version: 2.15.0
   resolution: "@parcel/bundler-default@npm:2.15.0"
@@ -1469,9 +1453,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001716":
-  version: 1.0.30001717
-  resolution: "caniuse-lite@npm:1.0.30001717"
-  checksum: 10c0/6c0bb1e5182fd578ebe97ee2203250849754a4e17d985839fab527ad27e125a4c4ffce3ece5505217fedf30ea0bbc17ac9f93e9ac525c0389ccba61c6e8345dc
+  version: 1.0.30001718
+  resolution: "caniuse-lite@npm:1.0.30001718"
+  checksum: 10c0/67f9ad09bc16443e28d14f265d6e468480cd8dc1900d0d8b982222de80c699c4f2306599c3da8a3fa7139f110d4b30d49dbac78f215470f479abb6ffe141d5d3
   languageName: node
   linkType: hard
 
@@ -2064,7 +2048,6 @@ __metadata:
     "@types/chrome": "npm:^0.0.322"
     choices.js: "npm:^11.1.0"
     parcel: "npm:^2.15.0"
-    tom-select: "npm:^2.4.3"
     webextension-polyfill: "npm:^0.12.0"
   languageName: unknown
   linkType: soft
@@ -2624,16 +2607,6 @@ __metadata:
   dependencies:
     is-number: "npm:^7.0.0"
   checksum: 10c0/487988b0a19c654ff3e1961b87f471702e708fa8a8dd02a298ef16da7206692e8552a0250e8b3e8759270f62e9d8314616f6da274734d3b558b1fc7b7724e892
-  languageName: node
-  linkType: hard
-
-"tom-select@npm:^2.4.3":
-  version: 2.4.3
-  resolution: "tom-select@npm:2.4.3"
-  dependencies:
-    "@orchidjs/sifter": "npm:^1.1.0"
-    "@orchidjs/unicode-variants": "npm:^1.1.2"
-  checksum: 10c0/0567c48e31d954227ac88f53586b61f784338d97f00115c17e5fc3606552e117bdd4d53e4fa912736569daada938ef7e72092ae16d22420eab0d1bb3472b62ea
   languageName: node
   linkType: hard
 
